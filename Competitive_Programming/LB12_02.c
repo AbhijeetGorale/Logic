@@ -1,9 +1,13 @@
 // write a program which accept number from user and check whether it contains 0 in it or not 
 
 #include<stdio.h>
-#include<stdbool.h>
 
-bool CheckZero(int iNo)
+#define TRUE 1
+#define FALSE 0
+
+typedef int BOOL;
+
+BOOL CheckZero(int iNo)
 {
     int iDigit = 0;
 
@@ -13,25 +17,25 @@ bool CheckZero(int iNo)
 
         if(iDigit == 0)
         {
-            return true ;
+            return TRUE ;
         }
         iNo = iNo / 10 ;
     }
-    return false;
+    return FALSE;
     
 }
 
 int main()
 {
     int iValue = 0;
-    bool bRet = false;
+    bool bRet = FALSE;
 
     printf("Enter Number\n");
     scanf("%d",&iValue);
 
     bRet = CheckZero(iValue);
 
-    if(bRet == true)
+    if(bRet == TRUE)
     {
         printf("It Contains Zero");
     }
